@@ -11,6 +11,8 @@
  * @date  2016-02-01
  */
 
+// https://www.dfrobot.com/product-1088.html
+
 #include "Arduino.h"
 #include "Wire.h"
 
