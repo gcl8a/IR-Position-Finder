@@ -15,7 +15,6 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <ESP32Servo.h>
 
 /*!
  * @brief Library for DFRobot's IR Position Camera
@@ -33,14 +32,10 @@ void setup()
    *  @brief initailize the module.
    */
   irFinder.begin();
-
-  pinMode(15, INPUT);
 }
 
 void loop()
 {
-  Serial.print(digitalRead(15));
-  Serial.print('\t');
   /*!
    *  @brief request the position
    */
