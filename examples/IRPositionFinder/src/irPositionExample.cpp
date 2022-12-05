@@ -15,7 +15,6 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <ESP32Servo.h>
 
 /*!
  * @brief Library for DFRobot's IR Position Camera
