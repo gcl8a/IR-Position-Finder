@@ -32,14 +32,10 @@ void setup()
    *  @brief initailize the module.
    */
   irFinder.begin();
-
-  pinMode(15, INPUT);
 }
 
 void loop()
 {
-  Serial.print(digitalRead(15));
-  Serial.print('\t');
   /*!
    *  @brief request the position
    */
