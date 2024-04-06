@@ -34,6 +34,11 @@ void setup()
   irFinder.begin();
 }
 
+/**
+ * Be careful when using with other I2C devices. This library might not play
+ * nice with others.
+*/
+
 void loop()
 {
   /*!
