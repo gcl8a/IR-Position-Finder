@@ -59,6 +59,9 @@ void IRDirectionFinder::requestPosition()
   Wire.requestFrom(IRAddress, 16);
 }
 
+/**
+ * As written, this will not play nicely with other I2C devices.
+*/
 bool IRDirectionFinder::available()
 {
   if (Wire.available() == 16) {   //read only the data length fits.
