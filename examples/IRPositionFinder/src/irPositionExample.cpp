@@ -39,12 +39,21 @@ void loop()
   /*!
    *  @brief request the position
    */
-  irFinder.requestPosition();
-  
+
+  /**
+   * Very important that you do not call this too often!!!
+  */
+  static uint32_t lastIRread = 0;
+  if(millis() - lastIRread > 50)
+  {
+    irFinder.requestPosition();
+    lastIRread = millis();
+  } 
   /*!
    *  @brief If there is data available, print it. Otherwise show the error message.
    */
-  if (irFinder.available()) {
+  if (irFinder.available()) 
+  {
     for (int i=0; i<4; i++) 
     {
       Point point = irFinder.ReadPoint(i);
@@ -56,9 +65,10 @@ void loop()
     }
     Serial.print('\n');
   }
-  else{
-    Serial.println("Device not available!");
-  }
-  
-  delay(50); //this is just a test program, so we'll allow a delay here
+
+  // Commented out to stop printing failures
+  // else
+  // {
+  //   Serial.println("Device not available!");
+  // }
 }
